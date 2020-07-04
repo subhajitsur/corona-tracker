@@ -1,0 +1,74 @@
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <br>
+    <table class="table table-hover">
+
+<thead class="thead-dark">
+<tr>
+    <th>Id</th>
+   
+    <th>confirmed</th>
+     <th>recovered</th>
+    <th>deceased</th> 
+     <th>tested</th>  
+ </tr>
+</thead>
+
+<tbody>
+    <tr *ngFor="let corona of coronaList | keyvalue; let index=index">
+        <td>{{index+1}}</td>
+        <th>{{corona.key}}</th>
+         <th>{{corona.value.total?.confirmed}}</th>
+         <th>{{corona.value.total?.recovered}}</th>
+         <th>{{corona.value.total?.deceased}}</th>
+         <th>{{corona.value.total?.tested}}</th>
+    </tbody>
+    </table> 
+<br>
+<h1>Show the state List</h1>
+<br>
+<table class="table table-hover">
+
+  <thead class="thead-dark">
+  <tr>
+      <th>Id</th>
+     <th>state</th>
+      <th>confirmed</th>
+        <th>recovered</th>
+      <th>deceased</th> 
+       <th>tested</th>  
+       <th>Action</th>
+   </tr>
+  </thead>
+  
+<tbody>
+  <tr *ngFor="let corona of coronaList | keyvalue; let index=index">
+      <td>{{index+1}}</td>
+     <th>{{corona.key}}</th>
+       <th>{{corona.value.total?.confirmed}}</th>
+       <th>{{corona.value.total?.recovered}}</th>
+       <th>{{corona.value.total?.deceased}}</th>
+       <th>{{corona.value.total?.tested}}</th>
+       <th>
+        <button  [routerLink]="['/details']"   class="btn btn-primary">Details</button></th>
+  </tbody>
+</table>
+ 
+    <!-- <mat-card *ngFor="let corona of coronaList | keyvalue">
+        <mat-card-title>{{corona.key}}</mat-card-title>
+        <mat-card-content>
+            
+          <p>Total Confirmed Cases:<span class="ml-2">{{corona.value.total?.confirmed}}</span></p>
+          <p> Total Recovered Cases:<span class="ml-3">{{corona.value.total?.recovered}}</span></p>
+          <p> Total Deceased Cases:<span class="ml-3">{{corona.value.total?.deceased}}</span></p>
+          <p> Total Tested Cases:<span class="ml-3">{{corona.value.total?.tested}}</span></p>
+         
+        </mat-card-content>
+      </mat-card>
+
+
+
+ -->
+
